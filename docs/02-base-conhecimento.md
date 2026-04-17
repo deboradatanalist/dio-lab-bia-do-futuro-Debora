@@ -1,18 +1,12 @@
 # Base de Conhecimento
 
 ## Dados Utilizados
-
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+O agente utiliza arquivos estruturados em CSV para simular o ecossistema de dados bancários, permitindo uma análise precisa entre o que foi planejado (perfil) e o que foi executado (transações).
 
 | Arquivo | Formato | Utilização no Agente |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| `perfil_usuario.json` | JSON | Define limites por categoria e metadados do cliente (objetivos, saldo). |
+| `transacoes.json` | JSON | Lista cronológica de gastos para análise de padrões e somatórios. |
 
 ---
 
@@ -20,7 +14,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+A transição para JSON permitiu uma hierarquia mais clara. O arquivo de perfil agora centraliza as metas mensais, facilitando a recuperação de valores específicos por categoria. No arquivo de transações, cada objeto representa um evento de gasto com campos de data, local e valor, simulando um "feed" de cartões de crédito/débito.
 
 ---
 
@@ -29,13 +23,12 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Os arquivos são lidos nativamente pelo Python usando a biblioteca `json`. Os dados são carregados em dicionários e listas, o que facilita a busca rápida por chaves específicas, como `limites_mensais['Lazer']`.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
-
+Os dados são convertidos em strings formatadas e injetados diretamente no contexto de sistema. Como o JSON é um formato que as LLMs "falam" nativamente, a IA compreende a estrutura de campos e valores com altíssima precisão, reduzindo erros de interpretação.
 ---
 
 ## Exemplo de Contexto Montado
@@ -43,13 +36,16 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+[DADOS DO CLIENTE EM JSON]
+{
+  "nome": "Mariana Silva",
+  "categoria_atual": "Lazer",
+  "limite": 500,
+  "total_gasto": 535,
+  "status": "Excedido",
+  "meta_pessoal": "Viagem de Férias"
+}
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+[INSTRUÇÃO]
+O Deb-Guard deve intervir agora. Use os dados acima para explicar que o limite de Lazer foi ultrapassado, mas mantenha o foco positivo na 'Viagem de Férias'.
 ```
