@@ -29,6 +29,7 @@ Os arquivos são lidos nativamente pelo Python usando a biblioteca `json`. Os da
 > Os dados vão no system prompt? São consultados dinamicamente?
 
 Os dados são convertidos em strings formatadas e injetados diretamente no contexto de sistema. Como o JSON é um formato que as LLMs "falam" nativamente, a IA compreende a estrutura de campos e valores com altíssima precisão, reduzindo erros de interpretação.
+
 ---
 
 ## Exemplo de Contexto Montado
