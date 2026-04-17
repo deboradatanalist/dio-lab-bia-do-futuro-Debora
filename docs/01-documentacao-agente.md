@@ -16,6 +16,7 @@ O agente monitora as transações e o teto de gastos definido pelo usuário. Ele
 > Quem vai usar esse agente?
 
 Clientes correntistas do Bradesco que buscam melhorar sua saúde financeira, especialmente jovens adultos e profissionais em transição de carreira que precisam gerenciar orçamentos mais apertados.
+
 ---
 
 ## Persona e Tom de Voz
