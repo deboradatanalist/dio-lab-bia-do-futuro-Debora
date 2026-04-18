@@ -1,0 +1,16 @@
+{
+  "cliente_id": "12345",
+  "nome": "Mariana Silva",
+  "objetivo_principal": "Viagem de Férias",
+  "limites_mensais": {
+    "Alimentação": 1200.00,
+    "Lazer": 500.00,
+    "Transporte": 400.00,
+    "Educação": 600.00,
+    "Saúde": 300.00
+  },
+  "preferencias": {
+    "canal_preferencial": "Chat",
+    "frequencia_alertas": "Imediata"
+  }
+}

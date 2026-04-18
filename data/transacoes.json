@@ -1,0 +1,60 @@
+[
+  {
+    "id": "t001",
+    "data": "2026-04-10",
+    "estabelecimento": "Supermercado Central",
+    "categoria": "Alimentação",
+    "valor": 450.00,
+    "metodo": "Débito"
+  },
+  {
+    "id": "t002",
+    "data": "2026-04-12",
+    "estabelecimento": "Cinema Multiplex",
+    "categoria": "Lazer",
+    "valor": 85.00,
+    "metodo": "Crédito"
+  },
+  {
+    "id": "t003",
+    "data": "2026-04-15",
+    "estabelecimento": "Show de Rock",
+    "categoria": "Lazer",
+    "valor": 450.00,
+    "metodo": "Crédito"
+  },
+  {
+    "id": "t004",
+    "data": "2026-04-16",
+    "estabelecimento": "App de Transporte",
+    "categoria": "Transporte",
+    "valor": 45.00,
+    "metodo": "Crédito"
+  },
+  {
+    "id": "t005",
+    "data": "2026-04-17",
+    "estabelecimento": "Pizzaria Bisa",
+    "categoria": "Alimentação",
+    "valor": 60.00,
+    "metodo": "Débito"
+  },
+  
+  {
+    "id": "t006",
+    "data": "2026-04-17",
+    "estabelecimento": "Open English",
+    "categoria": "Educação",
+    "valor": 360.00,
+    "metodo": "Débito"
+  },
+  
+  {
+    "id": "t007",
+    "data": "2026-04-10",
+    "estabelecimento": "Unimed",
+    "categoria": "Saúde",
+    "valor": 260.00,
+    "metodo": "Débito"
+  }
+]
