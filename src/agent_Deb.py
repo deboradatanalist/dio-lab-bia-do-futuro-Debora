@@ -12,7 +12,6 @@ def carregar_dados():
         with open('perfil_usuario.json', 'r', encoding='utf-8') as f:
             perfil = json.load(f)
         
-        # Carrega transações via Pandas para facilitar cálculos
         df_transacoes = pd.read_json('transacoes.json', encoding='utf-8')
         return perfil, df_transacoes
     except Exception as e:
